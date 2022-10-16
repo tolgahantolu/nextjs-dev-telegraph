@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="flex flex-row justify-between items-center px-4 py-3 border-b border-gray-600  fixed top-0 left-0 right-0 bg-main-background">
+    <header className="flex flex-row justify-between items-center px-4 py-3 border-b border-gray-600 fixed top-0 left-0 right-0 bg-main-background z-10">
       <button
         onClick={handleShowAside}
         type="button"
@@ -29,12 +29,12 @@ const Header: React.FC = () => {
 
       <div className="flex-1">
         <Link href="/">
-          <a className="flex flex-row items-center justify-center font-crimson">
+          <a className="flex flex-row items-center justify-center font-patua">
             <div>
-              <span className="font-normal text-[28px] text-headline-color">
+              <span className="font-normal text-2xl text-headline-color">
                 dev
               </span>
-              <span className="font-light text-base">.telegraph</span>
+              <span className="font-light text-sm">.telegraph</span>
             </div>
           </a>
         </Link>

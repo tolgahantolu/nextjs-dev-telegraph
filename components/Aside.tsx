@@ -20,7 +20,7 @@ const Aside = () => {
   return (
     <>
       {showAside && (
-        <aside className="w-full h-full overflow-y-auto fixed top-[67px] left-0 bottom-0 bg-main-background">
+        <aside className="w-full h-full overflow-y-auto fixed top-[65px] left-0 bottom-0 bg-main-background z-10">
           <div className="">
             <nav className="py-4">
               <ul>

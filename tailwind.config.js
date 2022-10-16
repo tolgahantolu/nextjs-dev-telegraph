@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "light-black": "#1f1f1f",
+        "light-black": "#181818",
         "main-background": "#0f0e17",
         "main-color": "#a7a9be",
         "headline-color": "#fffffe",
@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         crimson: ["Crimson Text", "serif"],
+        patua: ["Patua One", "cursive"],
       },
     },
   },

@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+
 import Header from "../components/Header";
 import Aside from "../components/Aside";
+import Posts from "../components/Post/Posts";
+import { getPostsData } from "../services";
 
-const Home: NextPage = () => {
+const Home: NextPage<{ posts: String[] }> = (props) => {
   return (
     <>
       <Head>
@@ -20,9 +23,7 @@ const Home: NextPage = () => {
         <main className="w-full h-full">
           <Aside />
 
-          <div className="text-lg text-center text-red-700 font-bold pt-[67px] w-full h-auto bg-main-background">
-            Let's get started...
-          </div>
+          <Posts posts={props.posts} />
         </main>
       </div>
     </>
@@ -30,3 +31,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const posts = await getPostsData();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
