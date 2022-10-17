@@ -1,7 +1,6 @@
 import { request, gql } from "graphql-request";
 
-const graphQLURL: string =
-  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cl9awn2jl3cpo01uebl62cpbp/master";
+const graphQLURL: any = process.env.ENDPOINT_URL;
 
 export const getPostsData = async () => {
   const query = gql`
@@ -27,6 +26,19 @@ export const getPostsData = async () => {
   const result = await request(graphQLURL, query);
   return result.posts;
 };
+
+//export const getCategoriesData = async () => {
+//  const query = gql`
+//    query {
+//      categories {
+//        name
+//      }
+//    }
+//  `;
+//
+//  const result = await request(graphQLURL, query);
+//  return result.posts;
+//};
 
 export const getPostDetailData = async (slug: String) => {
   const query = gql`
@@ -76,7 +88,9 @@ export const getCategoryPosts = async (slug: String) => {
           slug
           title
           upvoted
-          excerpt
+          featuredImage {
+            url
+          }
           content {
             raw
           }
@@ -93,4 +107,16 @@ export const getCategoryPosts = async (slug: String) => {
 
   const result = await request(graphQLURL, query, { slug });
   return result.category;
+};
+
+export const submitComment = async (obj: any) => {
+  const result = await fetch("/api/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj),
+  });
+
+  return result.json();
 };

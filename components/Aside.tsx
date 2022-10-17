@@ -11,6 +11,7 @@ import {
 import { RiReactjsLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
 import { IoLogoNodejs } from "react-icons/io";
+import { SiRedux } from "react-icons/si";
 
 import { useSelector } from "react-redux";
 
@@ -20,7 +21,7 @@ const Aside = () => {
   return (
     <>
       {showAside && (
-        <aside className="w-full h-full overflow-y-auto fixed top-[65px] left-0 bottom-0 bg-main-background z-10">
+        <aside className="w-full h-auto overflow-y-auto fixed top-[65px] left-0 bottom-0 bg-main-background z-10">
           <div className="">
             <nav className="py-4">
               <ul>
@@ -47,10 +48,10 @@ const Aside = () => {
               </ul>
             </nav>
 
-            <nav>
+            <nav className="pb-4">
               <ul>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/html">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <TbBrandHtml5 />
@@ -60,7 +61,7 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/css">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <TbBrandCss3 />
@@ -70,7 +71,7 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/javascript">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <TbBrandJavascript />
@@ -80,7 +81,7 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/react">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <RiReactjsLine />
@@ -90,7 +91,7 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/next">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <TbBrandNextjs />
@@ -100,7 +101,7 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/node">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <IoLogoNodejs />
@@ -110,12 +111,22 @@ const Aside = () => {
                   </Link>
                 </li>
                 <li className="transition-all hover:bg-light-black capitalize">
-                  <Link href="/">
+                  <Link href="/category/graphql">
                     <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
                       <span className="text-lg">
                         <GrGraphQl />
                       </span>
                       graphQL
+                    </a>
+                  </Link>
+                </li>
+                <li className="transition-all hover:bg-light-black capitalize">
+                  <Link href="/category/redux">
+                    <a className="flex items-center gap-x-3 px-6 leading-10 transition-all hover:text-headline-color">
+                      <span className="text-lg">
+                        <SiRedux />
+                      </span>
+                      redux
                     </a>
                   </Link>
                 </li>

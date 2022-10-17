@@ -1,13 +1,40 @@
-import React, { Key } from "react";
+import React, { FormEvent, Key, useRef } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import avatarSVG from "../../public/avatar.svg";
-import { getPostDetailData } from "../../services";
+import { getPostDetailData, submitComment } from "../../services";
 import moment from "moment";
 
-const PostDetails: NextPage<{ post: String[] | any }> = (props) => {
+const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
+  props
+) => {
   console.log(props.post);
+  console.log(props.slug);
+
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const commentTextareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleSubmitComment = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("Comment submitting...");
+
+    const name = nameInputRef.current?.value;
+    const email = emailInputRef.current?.value;
+    const comment = commentTextareaRef.current?.value;
+
+    const commentObj = {
+      name,
+      email,
+      comment,
+      slug: props.slug,
+    };
+
+    submitComment(commentObj).then((res) => {
+      console.log("Comment submitting!", res);
+    });
+  };
   return (
     <div className="py-[147px] px-6">
       <div>
@@ -89,18 +116,21 @@ const PostDetails: NextPage<{ post: String[] | any }> = (props) => {
         </h3>
         <form className="flex flex-col gap-y-3 ">
           <input
+            ref={nameInputRef}
             required
             type="text"
             placeholder="Your name"
             className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
           />
           <input
+            ref={emailInputRef}
             required
             type="email"
             placeholder="Your email"
             className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
           />
           <textarea
+            ref={commentTextareaRef}
             required
             className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
             placeholder="Your comment"
@@ -108,6 +138,7 @@ const PostDetails: NextPage<{ post: String[] | any }> = (props) => {
           <button
             type="submit"
             className="bg-black text-headline-color border border-main-color rounded-md py-2"
+            onClick={handleSubmitComment}
           >
             Post Comment
           </button>
@@ -126,6 +157,7 @@ export const getServerSideProps = async ({ params }: any) => {
   return {
     props: {
       post,
+      slug,
     },
   };
 };
