@@ -7,6 +7,7 @@ export const getPostsData = async () => {
   const query = gql`
     query {
       posts {
+        slug
         author {
           photo {
             url
@@ -25,4 +26,71 @@ export const getPostsData = async () => {
 
   const result = await request(graphQLURL, query);
   return result.posts;
+};
+
+export const getPostDetailData = async (slug: String) => {
+  const query = gql`
+    query getDetails($slug: String!) {
+      post(where: { slug: $slug }) {
+        author {
+          name
+          photo {
+            url
+          }
+        }
+        categories {
+          name
+          slug
+        }
+        comments {
+          comment
+          email
+          name
+          publishedAt
+        }
+        createdAt
+        slug
+        title
+        content {
+          raw
+          text
+        }
+        featuredImage {
+          url
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphQLURL, query, { slug });
+  return result.post;
+};
+
+export const getCategoryPosts = async (slug: String) => {
+  const query = gql`
+    query getCategoryPosts($slug: String!) {
+      category(where: { slug: $slug }) {
+        name
+        posts(orderBy: createdAt_ASC) {
+          createdAt
+          slug
+          title
+          upvoted
+          excerpt
+          content {
+            raw
+          }
+          author {
+            name
+            photo {
+              url
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphQLURL, query, { slug });
+  return result.category;
 };

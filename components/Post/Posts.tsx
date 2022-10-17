@@ -21,7 +21,7 @@ const Posts: React.FC<{ posts: String[] | any[] }> = (props) => {
           {/* single post */}
           {props.posts.map((post) => (
             <div key={post.title}>
-              <Link href="/">
+              <Link href={`/post/${post.slug}`}>
                 <a>
                   <div className="bg-light-black rounded-xl">
                     <div className="p-2">

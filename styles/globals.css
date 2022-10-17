@@ -9,6 +9,6 @@
   html,
   body,
   #__next {
-    @apply h-full text-main-color;
+    @apply h-full text-main-color bg-main-background;
   }
 }

@@ -14,11 +14,8 @@ module.exports = {
         "highlight-background": "#ff8906",
 
         "secondary-color": "#f25f4c",
-        "tertiary-color": "#e53170",
-        "stroke-color": "black",
       },
       fontFamily: {
-        crimson: ["Crimson Text", "serif"],
         patua: ["Patua One", "cursive"],
       },
     },
