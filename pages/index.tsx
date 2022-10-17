@@ -13,7 +13,7 @@ const Home: NextPage<{ posts: String[] }> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full h-full bg-main-background">
+      <div className="w-full h-full ">
         {/* main */}
         <Posts posts={props.posts} />
       </div>
