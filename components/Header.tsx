@@ -1,18 +1,30 @@
 import React from "react";
-
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { FaSignOutAlt } from "react-icons/fa";
 
 import { useDispatch, useSelector } from "react-redux";
 import { showAside } from "../store/asideSlice";
+import { logout } from "../firebase";
+import { useRouter } from "next/router";
 const Header: React.FC = () => {
   const sidebarStat = useSelector((state: any) => state.aside.showAside);
+  const user = useSelector((state: any | any[]) => state.auth.user);
+
+  const router = useRouter();
 
   const dispatch = useDispatch();
 
   const handleShowAside = () => {
     dispatch(showAside(!sidebarStat));
+  };
+
+  const handlerLogout = () => {
+    if (user) {
+      logout();
+      router.push("/login");
+    }
   };
 
   return (
@@ -41,13 +53,25 @@ const Header: React.FC = () => {
       </div>
 
       <div>
-        <Link href="/">
-          <a className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl">
-            <span className="text-[28px]">
-              <AiOutlineUser />
-            </span>
-          </a>
-        </Link>
+        {user ? (
+          <div className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl">
+            <button
+              type="button"
+              className="text-[28px]"
+              onClick={handlerLogout}
+            >
+              <FaSignOutAlt />
+            </button>
+          </div>
+        ) : (
+          <Link href="/login">
+            <a className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl">
+              <button type="button" className="text-[28px]">
+                <AiOutlineUser />
+              </button>
+            </a>
+          </Link>
+        )}
       </div>
     </header>
   );
