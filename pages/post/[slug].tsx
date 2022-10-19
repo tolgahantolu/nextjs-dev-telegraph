@@ -1,4 +1,4 @@
-import React, { FormEvent, Key, useRef } from "react";
+import React, { FormEvent, useRef } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,8 +56,8 @@ const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
 
         <div className="mt-8">
           <div className="flex gap-x-2">
-            {props.post.categories.map((category: String | any, i: Key) => (
-              <Link href={`/category/${category.slug}`} key={i}>
+            {props.post.categories.map((category: String | any) => (
+              <Link href={`/category/${category.slug}`} key={category.slug}>
                 <a
                   className="text-[8px] sm:text-[10px] font-medium text-headline-color px-2 py-1 bg-light-black"
                   key={category.slug}
@@ -102,10 +102,10 @@ const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
           <h3 className="text-2xl sm:text-[26px] font-medium text-headline-color -mb-2">
             {props.post.comments.length} Comments
           </h3>
-          {props.post.comments.map((c: String | any, i: Key) => (
+          {props.post.comments.map((c: String | any) => (
             <div
               className="py-4 last:border-none border-b border-main-color"
-              key={i}
+              key={c.name}
             >
               <div className="flex items-center gap-x-2 text-sm sm:text-base italic">
                 <p>{c.name}</p>
