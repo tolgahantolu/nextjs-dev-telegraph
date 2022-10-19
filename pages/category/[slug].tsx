@@ -20,7 +20,7 @@ const CategoryPosts: NextPage<{ posts: String[] | any }> = (props) => {
         {name} Posts
       </h1>
       {posts.length !== 0 ? (
-        <div className="grid gap-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* single post */}
           {posts.map((post: any) => (
             <div key={post.title}>

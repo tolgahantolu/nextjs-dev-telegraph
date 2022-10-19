@@ -17,7 +17,7 @@ const Posts: React.FC<{ posts: String[] | any[] }> = (props) => {
         <h1 className="text-lg font-semibold mb-8 text-headline-color">
           Recommended
         </h1>
-        <div className="grid gap-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* single post */}
           {props.posts.map((post) => (
             <div key={post.title}>

@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         type="button"
         className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl"
       >
-        <span className="text-[32px]">
+        <span className="text-[32px] md:text-4xl">
           {sidebarStat ? <IoMdClose /> : <IoMdMenu />}
         </span>
       </button>
@@ -43,10 +43,12 @@ const Header: React.FC = () => {
         <Link href="/">
           <a className="flex flex-row items-center justify-center font-patua">
             <div>
-              <span className="font-normal text-2xl text-headline-color">
+              <span className="font-normal text-2xl md:text-3xl text-headline-color">
                 dev
               </span>
-              <span className="font-light text-sm">.telegraph</span>
+              <span className="font-light text-sm md:text-base">
+                .telegraph
+              </span>
             </div>
           </a>
         </Link>
@@ -57,7 +59,7 @@ const Header: React.FC = () => {
           <div className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl">
             <button
               type="button"
-              className="text-[28px]"
+              className="text-[28px] md:text-[34px]"
               onClick={handlerLogout}
             >
               <FaSignOutAlt />
@@ -66,7 +68,7 @@ const Header: React.FC = () => {
         ) : (
           <Link href="/login">
             <a className="w-10 h-10 transition-all bg-transparent hover:bg-light-black grid place-items-center rounded-xl">
-              <button type="button" className="text-[28px]">
+              <button type="button" className="text-[28px] md:text-[34px]">
                 <AiOutlineUser />
               </button>
             </a>
