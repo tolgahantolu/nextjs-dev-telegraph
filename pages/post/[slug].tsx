@@ -50,6 +50,7 @@ const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
             height={200}
             layout="responsive"
             className="object-center object-cover"
+            alt={props.post.title}
           />
         </div>
 
@@ -82,6 +83,7 @@ const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
                 width={32}
                 height={32}
                 className="object-center object-cover rounded-full"
+                alt={props.post.author.name}
               />
               <h3 className="text-sm md:text-base">{props.post.author.name}</h3>
             </div>

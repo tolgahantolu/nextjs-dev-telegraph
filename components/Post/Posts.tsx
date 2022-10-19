@@ -37,6 +37,7 @@ const Posts: React.FC<{ posts: String[] | any[] }> = (props) => {
                               width={32}
                               height={32}
                               className="object-center object-cover rounded-full"
+                              alt={post.author.name}
                             />
                             <h3 className="text-sm">{post.author.name}</h3>
                           </div>
@@ -62,6 +63,7 @@ const Posts: React.FC<{ posts: String[] | any[] }> = (props) => {
                           height={160}
                           layout="responsive"
                           className="rounded-xl object-center object-cover"
+                          alt={post.title}
                         />
                       </div>
 
