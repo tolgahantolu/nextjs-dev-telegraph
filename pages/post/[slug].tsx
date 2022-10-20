@@ -10,9 +10,6 @@ import Head from "next/head";
 const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
   props
 ) => {
-  console.log(props.post);
-  console.log(props.slug);
-
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const commentTextareaRef = useRef<HTMLTextAreaElement>(null);

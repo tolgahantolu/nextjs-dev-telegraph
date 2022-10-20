@@ -10,7 +10,6 @@ import { BiUpvote } from "react-icons/bi";
 import moment from "moment";
 
 const Posts: React.FC<{ posts: String[] | any[] }> = (props) => {
-  console.log(props.posts);
   return (
     <>
       <div className="py-[147px] w-full h-auto px-6 bg-main-background">

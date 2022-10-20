@@ -14,7 +14,6 @@ import Head from "next/head";
 
 const CategoryPosts: NextPage<{ posts: String[] | any }> = (props) => {
   const { name, posts } = props.posts;
-  console.log(name, posts);
   return (
     <>
       <Head>

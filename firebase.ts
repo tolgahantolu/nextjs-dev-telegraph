@@ -28,8 +28,6 @@ const app = createFirebaseApp(firebaseConfig);
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user: any) => {
-  console.log(user);
-  console.log(auth);
   if (user) {
     let data = {
       uid: user.uid,
@@ -45,7 +43,6 @@ onAuthStateChanged(auth, (user: any) => {
 export const login = async (email: any, password: any) => {
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
-    console.log(result);
     return result;
   } catch (error: any) {
     alert(error.message);
