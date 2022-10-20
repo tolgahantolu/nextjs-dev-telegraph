@@ -22,7 +22,7 @@ const Home: NextPage<{ posts: String[] | any[] }> = (props) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getPostsData();
 
   return {
