@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  showAside: null,
+  showAside: false,
 };
 
 const asideSlice = createSlice({

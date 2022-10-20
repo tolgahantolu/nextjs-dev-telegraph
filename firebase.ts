@@ -24,12 +24,7 @@ onAuthStateChanged(auth, (user: any) => {
   console.log(user);
   console.log(auth);
   if (user) {
-    let data = {
-      uid: user.uid,
-      email: user.email,
-      emailVerified: user.emailVerified,
-    };
-    handlerSetUser(data);
+    handlerSetUser(user);
   } else {
     handlerSetUser(false);
   }
