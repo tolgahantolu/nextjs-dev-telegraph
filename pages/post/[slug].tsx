@@ -168,36 +168,6 @@ const PostDetails: NextPage<{ post: String[] | any; slug: String }> = (
               </p>
             </div>
           </form>
-
-          {/*<form className="flex flex-col gap-y-3 ">
-          <input
-            ref={nameInputRef}
-            required
-            type="text"
-            placeholder="Your name"
-            className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
-          />
-          <input
-            ref={emailInputRef}
-            required
-            type="email"
-            placeholder="Your email"
-            className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
-          />
-          <textarea
-            ref={commentTextareaRef}
-            required
-            className="outline-none rounded-md bg-light-black p-2 border border-headline-color text-headline-color placeholder-headline-color"
-            placeholder="Your comment"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-black text-headline-color border border-main-color rounded-md py-2"
-            onClick={handleSubmitComment}
-          >
-            Post Comment
-          </button>
-        </form>*/}
         </div>
       </div>
     </>

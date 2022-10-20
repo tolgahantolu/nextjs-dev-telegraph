@@ -27,19 +27,6 @@ export const getPostsData = async () => {
   return result.posts;
 };
 
-//export const getCategoriesData = async () => {
-//  const query = gql`
-//    query {
-//      categories {
-//        name
-//      }
-//    }
-//  `;
-//
-//  const result = await request(graphQLURL, query);
-//  return result.posts;
-//};
-
 export const getPostDetailData = async (slug: String) => {
   const query = gql`
     query getDetails($slug: String!) {
