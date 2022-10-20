@@ -2,11 +2,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { GraphQLClient, gql } from "graphql-request";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const graphQLURL: any = process.env.ENDPOINT_URL;
+  const graphQLURL: any = process.env.NEXT_PUBLIC_ENDPOINT_URL;
 
   const graphQlClient = new GraphQLClient(graphQLURL, {
     headers: {
-      authorization: `Bearer ${process.env.API_TOKEN}`,
+      authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
     },
   });
 

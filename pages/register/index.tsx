@@ -67,6 +67,10 @@ const Register: NextPage = () => {
                 </Link>
               </p>
             </div>
+
+            <small className="text-xs mt-5 block">
+              Sorry... Not working yet.
+            </small>
           </form>
         </div>
       </div>

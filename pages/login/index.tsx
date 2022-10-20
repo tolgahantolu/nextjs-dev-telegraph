@@ -73,6 +73,14 @@ const Login: NextPage = () => {
                 </Link>
               </p>
             </div>
+
+            <div className="mt-5">
+              <h2 className="mb-1">Login Test</h2>
+              <div className="grid gap-y-1">
+                <small className="text-xs">email: tolgahan@gmail.com</small>
+                <small className="text-xs">password: 123123</small>
+              </div>
+            </div>
           </form>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { request, gql } from "graphql-request";
 
-const graphQLURL: any = process.env.ENDPOINT_URL;
+const graphQLURL: any = process.env.NEXT_PUBLIC_ENDPOINT_URL;
 
 export const getPostsData = async () => {
   const query = gql`
