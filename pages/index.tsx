@@ -4,7 +4,7 @@ import Head from "next/head";
 import Posts from "../components/Post/Posts";
 import { getPostsData } from "../services";
 
-const Home: NextPage<{ posts: String[] }> = (props) => {
+const Home: NextPage<{ posts: String[] | any[] }> = (props) => {
   return (
     <>
       <Head>

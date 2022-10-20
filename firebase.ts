@@ -24,7 +24,6 @@ function createFirebaseApp(firebaseConfig: FirebaseOptions) {
     return initializeApp(firebaseConfig);
   }
 }
-
 const app = createFirebaseApp(firebaseConfig);
 const auth = getAuth(app);
 
