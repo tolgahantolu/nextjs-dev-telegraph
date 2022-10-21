@@ -23,7 +23,7 @@ NextJS, GraphQL, Firebase ve Redux ile geliştirdiğim bir proje. Ayrıca Typesc
 ## Uygulamanın Yaptıkları
 * Hygraph CMS üzerinden yazılmış query'ler ile anasayfa, kategori sayfaları için veri çekmek.
 * Hygraph CMS üzerinden yazılmış query'ler ile post detaylarını çekmek.
-* Kategori sayfalarında DESC sıralama yapmak.
+* Kategori sayfalarında tarihe göre DESC sıralama yapmak.
 * Firebase Auth ile kullanıcı login ve logout işlemlerini yapmak.
 
 ## Eklemeyi Hedeflediğim Özellikler
