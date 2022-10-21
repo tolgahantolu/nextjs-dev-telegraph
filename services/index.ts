@@ -70,7 +70,7 @@ export const getCategoryPosts = async (slug: String) => {
     query getCategoryPosts($slug: String!) {
       category(where: { slug: $slug }) {
         name
-        posts(orderBy: createdAt_ASC) {
+        posts(orderBy: createdAt_DESC) {
           createdAt
           slug
           title
