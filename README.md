@@ -1,3 +1,37 @@
+# Dev Telegraph 👨‍💻
+
+![dev-telegraph](https://user-images.githubusercontent.com/68701178/197105204-8a894a2c-ddb0-4f7a-a067-f8a2ef123428.png)
+Demo: https://dev-telegraph.vercel.app/
+
+NextJS, GraphQL, Firebase ve Redux ile geliştirdiğim bir proje. Ayrıca Typescript'i de bu proje ile birlikte elimden geldiğince verimli bir şekilde kullanmaya çalıştım.
+
+ ## Kullanılan Teknoloji ve Versiyonları
+ #### Dependencies
+ * react - `18.2.0`
+ * next - `12.3.1` 
+ * @reduxjs/toolkit - `^1.8.6`
+ * react-redux - `^8.0.4`
+ * graphql - `^16.6.0`
+ * graphql-request - `^5.0.0`
+ * firebase - `^9.12.1`
+ * moment - `^2.29.4`
+ #### Dev Dependencies
+ * typescript - `4.8.4`
+ * tailwindcss - `^3.1.8`
+ 
+
+## Uygulamanın Yaptıkları
+* Hygraph CMS üzerinden yazılmış query'ler ile anasayfa, kategori sayfaları için veri çekmek.
+* Hygraph CMS üzerinden yazılmış query'ler ile post detaylarını çekmek.
+* Kategori sayfalarında DESC sıralama yapmak.
+* Firebase Auth ile kullanıcı login ve logout işlemlerini yapmak.
+
+## Eklemeyi Hedeflediğim Özellikler
+* Firebase ile register işlemi. 
+* "Saved" sayısı en çok olan postları ana sayfada en üst sıralarda göstermek.
+* "Upvoted" sayısı en yüksek olan postları "Most Upvoted" sayfasında listelemek.
+
+<br/><br/>
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
